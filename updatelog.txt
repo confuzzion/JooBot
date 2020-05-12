@@ -1,0 +1,8 @@
+This is an update log of joo bot
+
+5.12.2020 Started working on Joo bot
+Here is the General outline, I don't have enough chat data of joo to actually make a neural network bot. So we have to settle for something a little simpler. 
+I'll have to just manually code in all of the responses and test. It might be possible to get some kind of learning in eg: What's your name? Chris *Bot creates catagory for Chris*
+The problem is not the answers, but the question. Human language is dumb, and inefficientm, however there is no permanent fix besides death to that so we'll just have to work around it. 
+
+I am extremely uncertain of the likely hood of success of this project. The hindenburg was also extremely promising and doable, yet we crashed that one too.
