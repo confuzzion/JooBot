@@ -6,3 +6,6 @@ I'll have to just manually code in all of the responses and test. It might be po
 The problem is not the answers, but the question. Human language is dumb, and inefficientm, however there is no permanent fix besides death to that so we'll just have to work around it. 
 
 I am extremely uncertain of the likely hood of success of this project. The hindenburg was also extremely promising and doable, yet we crashed that one too.
+
+5.21.2020 
+Added User interface, user can now actually speak, no response however
