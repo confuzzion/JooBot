@@ -9,3 +9,7 @@ I am extremely uncertain of the likely hood of success of this project. The hind
 
 5.21.2020 
 Added User interface, user can now actually speak, no response however
+
+5.26.2020
+Started screwing around with machine learning and AIML libraries. Have a rought chatbot shell, but no Joo Bot personality. Acts like just any other chat bot, need to edit in JooBot personality.
+There is no documentation for the AIML library I'm using. I've read at least a few thousand lines of the library. The sun is coming up.
