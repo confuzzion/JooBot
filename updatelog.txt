@@ -13,3 +13,10 @@ Added User interface, user can now actually speak, no response however
 5.26.2020
 Started screwing around with machine learning and AIML libraries. Have a rought chatbot shell, but no Joo Bot personality. Acts like just any other chat bot, need to edit in JooBot personality.
 There is no documentation for the AIML library I'm using. I've read at least a few thousand lines of the library. The sun is coming up.
+
+5.27.2020
+Joobot actually works, the UI I made and the machine learning library actually are integrated. I've read thousands of lines of source code for the library to finnally read custom 
+phrases and AIML files. I also had to learn how to write AIML, and then deal with the folders. Good god, I spent at least 1.5 hours on just file systems. The library
+for some reason, never like the way the folders were inputed. It took using java to automatically get the folders through the file api for the ALICE/AIML api to recognize the location of
+the custom bots. I don't see the sun this time, but I can feel the hours. This is basically alpha 1.0, as all I need to do now is actually write up the AIML files, or examples of what 
+joo might respond too. 
