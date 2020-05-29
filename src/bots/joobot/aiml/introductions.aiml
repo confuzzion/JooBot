@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<aiml>
+    <!--  -->
+    <!--  -->
+    <category>
+        <pattern>HI *</pattern>
+        <template>
+            Hello.
+        </template>
+    </category>
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <condition name = "username">
+                <li value = "unknown">Hello. What is your name?</li>
+                <li>Hello.</li>
+            </condition>
+        </template>
+    </category>
+    <category>
+        <pattern>HELLO</pattern>
+        <template><srai>HI</srai></template>
+    </category>
+
+    <category>
+        <pattern>HOW ARE YOU *</pattern>
+        <template>Alright how about you?</template>
+    </category>
+    <category>
+        <pattern>HOWS IT GOING</pattern>
+        <template><srai>HOW ARE YOU ^</srai></template>
+    </category>
+    <category>
+        <pattern>GOOD</pattern>
+        <that>ALRIGHT HOW ABOUT YOU</that>
+        <template>That's good to hear.</template>
+    </category>
+    <category>
+        <pattern>NOT BAD</pattern>
+        <that>ALRIGHT HOW ABOUT YOU</that>
+        <template>
+            <srai>GOOD</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>NOT GOOD</pattern>
+        <that>ALRIGHT HOW ABOUT YOU</that>
+        <template>What happened?</template>
+    </category>
+    <category>
+        <pattern>NOT WELL</pattern>
+        <that>ALRIGHT HOW ABOUT YOU</that>
+        <template><srai>NOT GOOD</srai></template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <that>WHAT HAPPENED</that>
+        <template>Damn. That sucks.</template>
+    </category>
+
+    <category>
+        <pattern>I AM *</pattern>
+        <template>
+            Nice to meet you <star/>.
+            <think><set name = "username"></set><star/></think>
+            <learnf>
+                <category>
+                    <pattern>WHAT IS MY NAME</pattern>
+                    <template>
+                        Your name is <eval><star/></eval>.
+                    </template>
+                </category>
+            </learnf>
+            <learnf>
+                <category>
+                    <pattern>WHO AM I</pattern>
+                    <template>
+                        <srai>WHAT IS MY NAME</srai>
+                    </template>
+                </category>
+            </learnf>
+            <learnf>
+                <category>
+                    <pattern>TELL ME MY NAME</pattern>
+                    <template><srai>WHAT IS MY NAME</srai></template>
+                </category>
+            </learnf>
+        </template>
+    </category>
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template><srai>I AM <star/></srai></template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <that>WHAT IS YOUR NAME</that>
+        <template><srai>I AM <star/></srai></template>
+    </category>
+    <!-- Anything past about here is just crap code for presentation -->
+    <category>
+        <pattern>WHEN IS YOUR BIRTHDAY</pattern>
+        <template>
+            I don't know. Why are you asking? When is yours?
+        </template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <that>WHEN IS YOURS</that>
+        <template>
+            I'll remember that your birthday is on <formal><star/></formal>.
+            <think><set name = "userbirthday"><formal><star/></formal></set></think>
+        </template>
+    </category>
+    <category>
+        <pattern>WHEN IS MY BIRTHDAY</pattern>
+        <template>
+            How should I know? It's on <get name = "userbirthday"/>.
+        </template>
+    </category>
+    <category>
+        <pattern>DO YOU REMEMBER MY BIRTHDAY</pattern>
+        <template><get name = "userbirthday"/>.</template>
+    </category>
+
+    <category>
+        <pattern>CAN YOU HELP ME _ THIS _</pattern>
+        <template>
+            Did we go over it in class with you?
+            <think><set name = "issueverb"><star index = "1"/></set></think>
+            <think><set name = "studentissue"><star index = "2"/></set></think>
+        </template>
+    </category>
+    <category>
+        <pattern>YES</pattern>
+        <that>DID WE GO OVER IT IN CLASS WITH YOU</that>
+        <template>Were you paying attention?</template>
+    </category>
+    <category>
+        <pattern>NO</pattern>
+        <that>DID WE GO OVER IT IN CLASS WITH YOU</that>
+        <template>Fine.</template>
+    </category>
+    <category>
+        <pattern>NO</pattern>
+        <that>WERE YOU PAYING ATTENTION</that>
+        <template>Then <get name = "issueverb"/> your own <get name = "studentissue"/>.</template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <random>
+                <li>*quiet incoherent mumbling*</li>
+                <li>What does that mean?</li>
+                <li>Interesting stuff.</li>
+                <li>What?</li>
+                <li>Huh?</li>
+                <li>*sarcastic laughing*</li>
+                <li>bruh</li>
+                <li>*pokes his head over computer*</li>
+            </random>
+        </template>
+    </category>
+</aiml>

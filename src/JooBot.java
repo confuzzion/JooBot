@@ -11,13 +11,13 @@ import org.alicebot.ab.*; // AIML library
 
 public class JooBot extends JFrame implements KeyListener
 {
-	private JPanel p = new JPanel();
+	private JPanel panel = new JPanel();
 	private JTextArea dialog = new JTextArea(20, 50);
 	private JTextArea input = new JTextArea(1, 50);
 	private JScrollPane scroll = new JScrollPane(dialog, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-	private Bot joo = new Bot("joobot", getResourcesPath());
-	private Chat chatSession = new Chat(joo);
+	private Bot joo;
+	private Chat chatSession;
 	public static void main(String[] args){
 		new JooBot();
 	}
@@ -32,15 +32,17 @@ public class JooBot extends JFrame implements KeyListener
 		dialog.setEditable(false);
 		input.addKeyListener(this);
 	
-		p.add(scroll);
-		p.add(input);
-		p.setBackground(new Color(0,128,0));
-		add(p);
+		panel.add(scroll);
+		panel.add(input);
+		panel.setBackground(new Color(0,128,0));
+		add(panel);
 		
         setVisible(true);
 		addText("Welcome to Joo Bot!");
-		MagicBooleans.trace_mode = false;
-		MagicBooleans.jp_tokenize = true;
+		MagicBooleans.trace_mode = true;
+		MagicBooleans.jp_tokenize = false;
+		joo = new Bot("joobot", getResourcesPath(), "chat");
+		chatSession = new Chat(joo);
 	}
 	
 	public void keyPressed(KeyEvent e)
@@ -49,13 +51,23 @@ public class JooBot extends JFrame implements KeyListener
 		{
 			input.setEditable(false);
 			//get user input
-			String quote=input.getText();
+			String quote = input.getText();
 			input.setText("");
 			addText("\nYou: " + quote + "\n");
 			quote.trim();
-			
-			String jooResponse = chatSession.multisentenceRespond(quote);
-			addText("Mr.Joo: " + jooResponse);
+			if(quote.equalsIgnoreCase("clear"))
+			{
+				dialog.setText("Terminal Reset.");
+			}
+			else if(quote.equalsIgnoreCase("exit"))
+			{
+				System.exit(0);
+			}
+			else
+			{
+				String jooResponse = chatSession.multisentenceRespond(quote);
+				addText("Mr.Joo: " + jooResponse);
+			}
 		}
 	}
 	

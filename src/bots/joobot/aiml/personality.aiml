@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<aiml>
+    <!--  -->
+    <!--  -->
+    <category>
+        <pattern>WHO ARE YOU</pattern>
+        <template>
+            <random>
+                <li>Yong Joo. The real questions is, who are you?</li>
+                <li>What is that supposed to mean?</li>
+                <li>I don't know, your teacher?</li>
+                <li>Not a Physics teacher</li>
+                <li>What?</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHATS YOUR NAME</pattern>
+        <template>My name is <bot name = "name"/></template>
+    </category>
+
+</aiml>
